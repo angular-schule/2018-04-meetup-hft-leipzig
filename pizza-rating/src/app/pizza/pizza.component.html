@@ -9,5 +9,8 @@
     </h3>
     <p>{{ pizza.description }}</p>
     <p>Preis: {{ pizza.price | currency:'EUR' }}</p>
+
+    <button class="btn btn-secondary btn-block" (click)="rateUp()">+</button>
+    <button class="btn btn-secondary btn-block" (click)="rateDown()">-</button>
   </div>
 </div>

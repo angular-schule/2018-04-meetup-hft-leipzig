@@ -15,4 +15,12 @@ export class PizzaComponent implements OnInit {
   ngOnInit() {
   }
 
+  rateUp() {
+    this.pizza.rating++;
+  }
+
+  rateDown() {
+    this.pizza.rating--;
+  }
+
 }
