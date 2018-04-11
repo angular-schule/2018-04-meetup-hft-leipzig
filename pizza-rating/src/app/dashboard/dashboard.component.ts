@@ -19,7 +19,11 @@ export class DashboardComponent implements OnInit {
     this.ps.getAll().subscribe(pizzas => {
       this.pizzas = pizzas;
     });
+  }
 
+  sortList(pizza: Pizza) {
+    console.log('Pizza rated:', pizza);
+    this.pizzas.sort((a, b) => b.rating - a.rating);
   }
 
 }

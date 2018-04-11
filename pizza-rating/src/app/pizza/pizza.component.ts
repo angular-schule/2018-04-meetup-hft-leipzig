@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Pizza } from '../shared/pizza';
 
 @Component({
@@ -9,6 +9,7 @@ import { Pizza } from '../shared/pizza';
 export class PizzaComponent implements OnInit {
 
   @Input() pizza: Pizza;
+  @Output() rate = new EventEmitter<Pizza>();
 
   constructor() { }
 
@@ -17,10 +18,12 @@ export class PizzaComponent implements OnInit {
 
   rateUp() {
     this.pizza.rating++;
+    this.rate.emit(this.pizza);
   }
 
   rateDown() {
     this.pizza.rating--;
+    this.rate.emit(this.pizza);
   }
 
 }

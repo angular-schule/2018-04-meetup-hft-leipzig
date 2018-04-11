@@ -1,9 +1,9 @@
 <div class="row">
   <pizza
-  [pizza]="p"
-  *ngFor="let p of pizzas"
-  class="col-4"
-  ></pizza>
+    [pizza]="p"
+    *ngFor="let p of pizzas"
+    (rate)="sortList($event)"
+    class="col-4"></pizza>
 </div>
 
 <div *ngIf="pizzas.length === 3">
