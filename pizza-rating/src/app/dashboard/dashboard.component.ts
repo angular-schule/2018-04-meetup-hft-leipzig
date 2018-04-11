@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza } from '../shared/pizza';
+import { PizzaStoreService } from '../shared/pizza-store.service';
 
 
 @Component({
@@ -9,28 +10,16 @@ import { Pizza } from '../shared/pizza';
 })
 export class DashboardComponent implements OnInit {
 
-  pizzas: Pizza[];
+  pizzas: Pizza[] = [];
 
-  constructor() {
+  constructor(private ps: PizzaStoreService) {
   }
 
   ngOnInit() {
-    this.pizzas = [
-      {
-        id: 1,
-        name: 'Hawaii',
-        description: 'Schinken und Ananas',
-        price: 10.90,
-        rating: 3
-      },
-      {
-        id: 2,
-        name: 'Funghi',
-        description: 'Pilzeeeee',
-        price: 8.99,
-        rating: 5
-      }
-    ];
+    this.ps.getAll().subscribe(pizzas => {
+      this.pizzas = pizzas;
+    });
+
   }
 
 }
