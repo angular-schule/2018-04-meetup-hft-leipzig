@@ -1,0 +1,13 @@
+<div class="card">
+  <img class="card-img-top" src="//api.angular.schule/avatar/{{ pizza.id }}">
+  <div class="card-body">
+    <h3>
+      {{ pizza.name }}
+      <span class="badge badge-success badge-pill">
+        {{ pizza.rating }}
+      </span>
+    </h3>
+    <p>{{ pizza.description }}</p>
+    <p>Preis: {{ pizza.price | currency:'EUR' }}</p>
+  </div>
+</div>

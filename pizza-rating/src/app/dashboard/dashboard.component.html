@@ -1,1 +1,11 @@
-{{ pizzas }}
+<div class="row">
+  <pizza
+  [pizza]="p"
+  *ngFor="let p of pizzas"
+  class="col-4"
+  ></pizza>
+</div>
+
+<div *ngIf="pizzas.length === 3">
+  Es sind genau 3 Pizzen vorhanden.
+</div>

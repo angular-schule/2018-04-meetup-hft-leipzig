@@ -20,11 +20,11 @@ export class DashboardComponent implements OnInit {
         id: 1,
         name: 'Hawaii',
         description: 'Schinken und Ananas',
-        price: 10.99,
+        price: 10.90,
         rating: 3
       },
       {
-        id: 1,
+        id: 2,
         name: 'Funghi',
         description: 'Pilzeeeee',
         price: 8.99,
