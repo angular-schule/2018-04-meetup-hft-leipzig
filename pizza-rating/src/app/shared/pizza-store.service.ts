@@ -13,4 +13,8 @@ export class PizzaStoreService {
   getAll(): Observable<Pizza[]> {
     return this.http.get<Pizza[]>('https://pizza.angular.schule/pizzas');
   }
+
+  getSingle(id: number): Observable<Pizza> {
+    return this.http.get<Pizza>(`https://pizza.angular.schule/pizza/${id}`);
+  }
 }
